@@ -25,14 +25,14 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Transmission Not Found • Hac Phong",
+      title: "Transmission Not Found • Nguyễn Hạc Phong",
     };
   }
 
   const canonicalUrl = `https://hacphong.com/blog/${post.slug}`;
 
   return {
-    title: `${post.title} • Hac Phong`,
+    title: `${post.title} • Nguyễn Hạc Phong`,
     description: post.excerpt,
     alternates: {
       canonical: canonicalUrl,
@@ -42,7 +42,7 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
-      authors: ["Nguyen Phong (Hac Phong)"],
+      authors: ["Nguyễn Hạc Phong"],
       url: canonicalUrl,
     },
     twitter: {
@@ -84,12 +84,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         "mainEntityOfPage": postUrl,
         "author": {
           "@type": "Person",
-          "name": "Nguyen Phong (Hac Phong)",
+          "name": "Nguyễn Hạc Phong",
+          "alternateName": "Hac Phong",
           "url": "https://hacphong.com",
         },
         "publisher": {
           "@type": "Person",
-          "name": "Nguyen Phong (Hac Phong)",
+          "name": "Nguyễn Hạc Phong",
+          "alternateName": "Hac Phong",
           "url": "https://hacphong.com",
         },
         "keywords": post.tags.join(", "),

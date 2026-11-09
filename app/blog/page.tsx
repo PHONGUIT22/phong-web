@@ -5,14 +5,14 @@ import JsonLd from "@/components/JsonLd";
 import { BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Transmission Logs & Tech Writing • Hac Phong",
+  title: "Transmission Logs & Tech Writing • Nguyễn Hạc Phong",
   description:
     "Engineering essays and architectural blueprints on Model Context Protocol (MCP), Chaumian eCash (Cashu/Nostr), Programmatic SEO, and embedded AI agents.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Transmission Logs & Tech Writing • Hac Phong",
+    title: "Transmission Logs & Tech Writing • Nguyễn Hạc Phong",
     description:
       "Engineering essays and architectural blueprints on Model Context Protocol (MCP), Chaumian eCash (Cashu/Nostr), Programmatic SEO, and embedded AI agents.",
     url: "https://hacphong.com/blog",
@@ -27,12 +27,13 @@ export default function BlogPage() {
     "@type": "Blog",
     "@id": "https://hacphong.com/blog/#blog",
     "url": "https://hacphong.com/blog",
-    "name": "Hac Phong Transmission Logs",
+    "name": "Nguyễn Hạc Phong Transmission Logs",
     "description":
       "Deep dives into protocol engineering, distributed systems, machine-to-machine payments, and scaling modern web software.",
     "publisher": {
       "@type": "Person",
-      "name": "Nguyen Phong (Hac Phong)",
+      "name": "Nguyễn Hạc Phong",
+      "alternateName": "Hac Phong",
       "url": "https://hacphong.com",
     },
     "blogPost": posts.map((post) => ({
@@ -43,7 +44,8 @@ export default function BlogPage() {
       "url": `https://hacphong.com/blog/${post.slug}`,
       "author": {
         "@type": "Person",
-        "name": "Nguyen Phong (Hac Phong)",
+        "name": "Nguyễn Hạc Phong",
+        "alternateName": "Hac Phong",
       },
     })),
   };

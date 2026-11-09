@@ -28,10 +28,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
-  title: "Hac Phong (Nguyen Phong) • Full-Stack Systems & AI Infrastructure Engineer",
+  title: "Nguyễn Hạc Phong • Full-Stack Systems & AI Infrastructure Engineer",
   description:
-    "Engineering portfolio of Hac Phong: autonomous AI infrastructure, Context MMU gateways (Phonix), Model Context Protocol (NostrPulse MCP), Chaumian eCash, and programmatic web engines (CheckDamp UK).",
+    "Engineering portfolio of Nguyễn Hạc Phong: autonomous AI infrastructure, Context MMU gateways (Phonix), Model Context Protocol (NostrPulse MCP), Chaumian eCash, and programmatic web engines (CheckDamp UK).",
   keywords: [
+    "Nguyễn Hạc Phong",
+    "Nguyen Hac Phong",
+    "Hạc Phong",
     "Hac Phong",
     "Nguyen Phong",
     "Phonix v2.1",
@@ -46,20 +49,20 @@ export const metadata: Metadata = {
     "Programmatic SEO",
     "Systems Engineer",
   ],
-  authors: [{ name: "Nguyen Phong (Hac Phong)", url: "https://hacphong.com" }],
-  creator: "Nguyen Phong (Hac Phong)",
+  authors: [{ name: "Nguyễn Hạc Phong", url: "https://hacphong.com" }],
+  creator: "Nguyễn Hạc Phong",
   openGraph: {
-    title: "Hac Phong (Nguyen Phong) • Systems & AI Infrastructure Engineer",
+    title: "Nguyễn Hạc Phong • Full-Stack Systems & AI Infrastructure Engineer",
     description:
       "Architecting autonomous AI infrastructure, AST context paging gateways, Model Context Protocol servers, and programmatic web software.",
     url: "https://hacphong.com",
-    siteName: "Hac Phong Portfolio",
+    siteName: "Nguyễn Hạc Phong Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hac Phong (Nguyen Phong) • Systems & AI Infrastructure Engineer",
+    title: "Nguyễn Hạc Phong • Systems & AI Infrastructure Engineer",
     description:
       "Architecting autonomous AI infrastructure, AST context paging gateways, Model Context Protocol servers, and programmatic web software.",
     creator: "@PHONGUIT22",

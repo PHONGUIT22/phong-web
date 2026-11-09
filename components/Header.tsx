@@ -34,7 +34,7 @@ export default function Header() {
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-lg font-semibold tracking-tight text-slate-900 group-hover:text-brand-700 transition-colors">
-                Hac Phong
+                Nguyễn Hạc Phong
               </span>
               <span className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">
                 Systems & AI

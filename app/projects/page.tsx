@@ -5,14 +5,14 @@ import JsonLd from "@/components/JsonLd";
 import { Layers } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Projects & Systems Catalog • Hac Phong",
+  title: "Projects & Systems Catalog • Nguyễn Hạc Phong",
   description:
     "Open-source software, AST context paging gateways (Phonix v2.1), Model Context Protocol implementations (NostrPulse MCP), and high-traffic programmatic web engines (CheckDamp UK).",
   alternates: {
     canonical: "/projects",
   },
   openGraph: {
-    title: "Projects & Systems Catalog • Hac Phong",
+    title: "Projects & Systems Catalog • Nguyễn Hạc Phong",
     description:
       "Open-source software, AST context paging gateways, Model Context Protocol implementations, and programmatic web engines.",
     url: "https://hacphong.com/projects",
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
     "@type": "CollectionPage",
     "@id": "https://hacphong.com/projects/#webpage",
     "url": "https://hacphong.com/projects",
-    "name": "Projects & Systems Catalog • Hac Phong",
+    "name": "Projects & Systems Catalog • Nguyễn Hạc Phong",
     "description":
       "Comprehensive directory of open-source architectures, autonomous AI agents, Model Context Protocol servers, and organic traffic micro-SaaS engines.",
     "mainEntity": {
@@ -44,7 +44,8 @@ export default function ProjectsPage() {
           "programmingLanguage": p.tech,
           "author": {
             "@type": "Person",
-            "name": "Nguyen Phong (Hac Phong)",
+            "name": "Nguyễn Hạc Phong",
+            "alternateName": "Hac Phong",
             "url": "https://hacphong.com",
           },
         },

@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
               <span className="font-serif text-lg font-semibold text-slate-900">
-                Hac Phong
+                Nguyễn Hạc Phong
               </span>
               <span className="text-xs text-slate-400 font-mono">
                 / hacphong.com
@@ -147,7 +147,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
-          <p>© {currentYear} Nguyen Phong. All rights reserved.</p>
+          <p>© {currentYear} Nguyễn Hạc Phong. All rights reserved.</p>
           <p className="flex items-center gap-1.5 font-mono text-[11px]">
             <span>ENGINEERED FOR SPEED & PRIVACY</span>
           </p>
