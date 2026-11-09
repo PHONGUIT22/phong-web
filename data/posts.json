@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "architecting-waterhardness-uk-geospatial-engine",
+    "title": "Architecting WaterHardness.uk: Scaling a Hyper-Local Geospatial Engine to 3,000+ Nodes with Next.js 16, DWI Hydrological Datasets, and Algorithmic E-E-A-T",
+    "excerpt": "How I engineered a high-performance spatial analytics platform across 1.7M+ UK postcodes, solved regulatory PDF friction, and achieved a 100,000% GSC impression surge in under 90 days.",
+    "date": "2026-11-09",
+    "tags": ["Next.js 16", "Data Engineering", "Programmatic SEO", "Spatial Analytics", "E-E-A-T", "System Architecture"],
+    "readingTime": "12 min read",
+    "featured": true
+  },
+  {
+    "slug": "phonix-context-mmu-gateway",
+    "title": "Phonix v2.1: Zero-Trust AST Context Paging & 1.5B Micro-Router Gateway",
+    "excerpt": "How we engineered a 4-layer Gravitational Memory Management Unit (G-MMU), a GBNF-locked 1.5B local SLM router, and a Z3 formal policy engine to cut LLM context token consumption by 97.05% (33.92x compression) with zero data leakage.",
+    "date": "2026-11-09",
+    "tags": ["AI Infrastructure", "AST", "Z3 Solver", "SLM", "MCP"],
+    "readingTime": "11 min read",
+    "featured": true
+  },
+  {
+    "slug": "mcp-server-ecash",
+    "title": "NostrPulse MCP: Decentralized Stripe & Anti-Sybil Radar for Autonomous AI Agents",
+    "excerpt": "Designing an open-source Model Context Protocol (MCP) server combining a 5-Pillar Web-of-Trust Anti-Sybil Radar, asynchronous Cashu eCash (NIP-61 NutZaps), NIP-47 NWC Lightning settlement, and deterministic agent spending guardrails.",
+    "date": "2026-11-05",
+    "tags": ["MCP", "AI Agents", "Cashu eCash", "Nostr", "Web3"],
+    "readingTime": "10 min read",
+    "featured": true
+  },
+  {
+    "slug": "programmatic-seo-uk",
+    "title": "Case Study: Architecting a High-Performance UK Property Risk Engine with Next.js 16 & Open Data",
+    "excerpt": "Inside the data pipeline, static edge caching, and building-physics modeling behind CheckDamp UK—synthesizing complex public housing datasets into instant property health diagnostics across UK postcode districts.",
+    "date": "2026-10-20",
+    "tags": ["Next.js 16", "Open Data", "Web Architecture", "Data Engineering"],
+    "readingTime": "7 min read",
+    "featured": true
+  }
+]

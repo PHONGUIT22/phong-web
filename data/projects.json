@@ -1,0 +1,62 @@
+[
+  {
+    "id": "phonix",
+    "name": "Phonix v2.1",
+    "tagline": "Zero-Trust AST Paging & 1.5B Micro-Router Gateway",
+    "description": "Enterprise AI compliance & cost gateway featuring a proprietary 4-layer G-MMU (L0–L3) AST context pager, a GBNF grammar-locked 1.5B Micro-Router SLM (1.2GB VRAM cap), and a Z3 SMT formal policy engine—saving 97.05% context tokens (33.92x compression) with 100% zero-trust threat interception.",
+    "category": "AI / Systems",
+    "tech": ["Python 3.13", "Tree-sitter AST", "Z3 Solver", "1.5B SLM", "MCP"],
+    "github": "https://github.com/PHONGUIT22/Phonix",
+    "demo": null,
+    "featured": true,
+    "status": "RELEASE V2.1"
+  },
+  {
+    "id": "nostrpulse-mcp",
+    "name": "NostrPulse MCP",
+    "tagline": "Decentralized Stripe & Anti-Sybil Radar for AI Agents",
+    "description": "Open-source payment and sovereign trust layer for autonomous AI agents over Model Context Protocol (Stdio JSON-RPC). Combines a 5-Pillar Web-of-Trust Anti-Sybil Radar, asynchronous Cashu eCash (NIP-61 NutZaps), NIP-47 NWC Lightning rails, and autonomous spending guardrails.",
+    "category": "AI / Web3",
+    "tech": ["TypeScript", "MCP Stdio", "Cashu eCash", "Nostr NIP-61/47", "Next.js 16"],
+    "github": "https://github.com/PHONGUIT22/nostrpulse-full",
+    "demo": "https://nostrpulse.vercel.app/",
+    "featured": true,
+    "status": "NPM V1.3.2"
+  },
+  {
+    "id": "checkdamp-uk",
+    "name": "CheckDamp UK",
+    "tagline": "UK property risk & hygrothermal building pathology engine",
+    "description": "High-performance UK housing stock & property moisture intelligence platform powered by Next.js 16 SSG—synthesizing MHCLG EPC registers, VOA housing stock, and Met Office wind-driven rain indices into sub-45ms diagnostics across 295 UK outcode districts.",
+    "category": "Micro-SaaS",
+    "tech": ["Next.js 16", "TypeScript", "Open Data ETL", "Hygrothermal Modeling", "Tailwind CSS"],
+    "github": null,
+    "demo": "https://checkdamp.co.uk/",
+    "featured": true,
+    "status": "LIVE • UK SAAS"
+  },
+  {
+    "id": "waterhardness-uk",
+    "name": "WaterHardness.uk",
+    "tagline": "Hyper-local UK water hardness & appliance calibration engine",
+    "description": "Spatial environmental data platform synthesizing DWI regulatory datasets across 1.7M+ UK postcodes, 2,977 outcodes, and 25+ water undertakers—pre-rendering 3,000+ nodes via Next.js 16 and achieving +108,000% organic search growth.",
+    "category": "Micro-SaaS",
+    "tech": ["Next.js 16", "Spatial Analytics", "Supabase", "TypeScript", "Tailwind CSS"],
+    "github": null,
+    "demo": "https://waterhardness.uk",
+    "featured": false,
+    "status": "LIVE • 3,000+ NODES"
+  },
+  {
+    "id": "oop-uit",
+    "name": "OOP UIT Systems",
+    "tagline": "Advanced Object-Oriented Programming architectures & design patterns",
+    "description": "Comprehensive C++ reference implementations of Object-Oriented Programming architectures, structural design patterns, memory management, and systems engineering coursework at UIT (VNU-HCM).",
+    "category": "Core Engineering",
+    "tech": ["C++", "Design Patterns", "Clean Architecture", "OOP"],
+    "github": "https://github.com/PHONGUIT22/OOP-UIT",
+    "demo": null,
+    "featured": false,
+    "status": "OPEN SOURCE"
+  }
+]

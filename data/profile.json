@@ -1,0 +1,28 @@
+{
+  "name": "Hac Phong",
+  "alias": "Nguyen Phong",
+  "title": "Full-Stack Systems & AI Infrastructure Engineer",
+  "headline": "Architecting autonomous AI infrastructure & high-performance web systems.",
+  "subtitle": "Nguyen Phong (Hac Phong) • Systems Engineer specializing in Context MMU Gateways, Model Context Protocol (MCP), Chaumian eCash & Programmatic SEO.",
+  "bio": "Full-stack and AI infrastructure engineer building deterministic context paging gateways (Phonix G-MMU), decentralized M2M payment & trust protocols (NostrPulse MCP), and high-traffic Programmatic SEO platforms (CheckDamp UK).",
+  "status": "Available for engineering & research collaborations",
+  "location": "Ho Chi Minh City, Vietnam",
+  "education": {
+    "school": "University of Information Technology (UIT) - VNU-HCM",
+    "url": "https://www.uit.edu.vn",
+    "degree": "Computer Science / Software Engineering"
+  },
+  "nostr": {
+    "nip05": "phong@hacphong.com",
+    "npub": "npub1p8jw2mhsel5vpcmgxu45nuwwxfwrqxv0pvygrvknelwhpyzf5v4sd3u7gw",
+    "pubkeyHex": "09e4e56ef0cfe8c0e368372b49f1ce325c30198f0b0881b2d3cfdd709049a32b",
+    "lightningAddress": "hacphong@getalby.com"
+  },
+  "links": {
+    "email": "phong@hacphong.com",
+    "github": "https://github.com/PHONGUIT22",
+    "linkedin": "https://www.linkedin.com/in/nguy%E1%BB%85n-phong-a673681b5/",
+    "facebook": "https://www.facebook.com/phong.nguyen.916206/",
+    "layers": "https://layers.to/np798573l7ecnk8fcs"
+  }
+}
