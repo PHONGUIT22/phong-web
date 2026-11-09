@@ -19,15 +19,17 @@ const CORS_HEADERS = {
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const name = searchParams.get("name")?.toLowerCase();
+  const rawName = searchParams.get("name");
+  const name = rawName ? rawName.trim().toLowerCase() : undefined;
 
-  const names: Record<string, string> = {
+  const knownNames: Record<string, string> = {
     _: NOSTR_PUBKEY_HEX,
     phong: NOSTR_PUBKEY_HEX,
     hacphong: NOSTR_PUBKEY_HEX,
   };
 
-  if (name && !names[name]) {
+  // If a name was specified and does not match any known alias (case-insensitive & trimmed)
+  if (name && !knownNames[name]) {
     return NextResponse.json(
       { names: {}, relays: {} },
       {
@@ -37,8 +39,22 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Response map containing both clean keys and raw requested key for 100% client tolerance
+  const responseNames: Record<string, string> = {
+    _: NOSTR_PUBKEY_HEX,
+    phong: NOSTR_PUBKEY_HEX,
+    hacphong: NOSTR_PUBKEY_HEX,
+  };
+
+  if (name) {
+    responseNames[name] = NOSTR_PUBKEY_HEX;
+  }
+  if (rawName) {
+    responseNames[rawName] = NOSTR_PUBKEY_HEX;
+  }
+
   const responseData = {
-    names: name ? { [name]: NOSTR_PUBKEY_HEX } : names,
+    names: responseNames,
     relays: {
       [NOSTR_PUBKEY_HEX]: RELAYS,
     },
