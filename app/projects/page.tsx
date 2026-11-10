@@ -36,12 +36,26 @@ export default function ProjectsPage() {
         "@type": "ListItem",
         "position": index + 1,
         "item": {
-          "@type": p.github ? "SoftwareSourceCode" : "WebApplication",
+          ...(p.github
+            ? {
+                "@type": "SoftwareSourceCode",
+                "codeRepository": p.github,
+                "programmingLanguage": p.tech,
+              }
+            : {
+                "@type": "WebApplication",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "All",
+                "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                },
+              }),
           "name": p.name,
           "description": p.description,
           "url": p.demo || p.github || "https://hacphong.com/projects",
-          ...(p.github && { "codeRepository": p.github }),
-          "programmingLanguage": p.tech,
           "author": {
             "@type": "Person",
             "name": "Nguyễn Hạc Phong",
