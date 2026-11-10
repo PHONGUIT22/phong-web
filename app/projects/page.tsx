@@ -45,7 +45,7 @@ export default function ProjectsPage() {
           "author": {
             "@type": "Person",
             "name": "Nguyễn Hạc Phong",
-            "alternateName": "Hac Phong",
+            "alternateName": "Hạc Phong",
             "url": "https://hacphong.com",
           },
         },

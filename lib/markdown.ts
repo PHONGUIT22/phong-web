@@ -124,7 +124,7 @@ export function getProfile(): Profile {
     alias: "Hạc Phong (Nguyen Phong)",
     title: "Full-Stack Systems & AI Infrastructure Engineer",
     headline: "Architecting autonomous AI infrastructure & high-performance web systems.",
-    subtitle: "Nguyễn Hạc Phong (Hac Phong) • Systems Engineer specializing in Context MMU Gateways, Model Context Protocol (MCP), Chaumian eCash & Programmatic SEO.",
+    subtitle: "Nguyễn Hạc Phong (Hạc Phong) • Systems Engineer specializing in Context MMU Gateways, Model Context Protocol (MCP), Chaumian eCash & Programmatic SEO.",
     bio: "Full-stack and AI infrastructure engineer building deterministic context paging gateways (Phonix G-MMU), decentralized M2M payment & trust protocols (NostrPulse MCP), and high-traffic Programmatic SEO platforms (CheckDamp UK).",
     status: "Available for engineering & research collaborations",
     location: "Ho Chi Minh City, Vietnam",

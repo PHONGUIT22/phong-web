@@ -9,7 +9,7 @@ featured: true
 
 # Phonix v2.1: Zero-Trust AST Context Paging & 1.5B Micro-Router Gateway
 
-> **Author:** Nguyen Phong (Hac Phong) • **Published:** November 9, 2026 • **Category:** AI Infrastructure & Compilers  
+> **Author:** Nguyễn Hạc Phong • **Published:** November 9, 2026 • **Category:** AI Infrastructure & Compilers  
 > **Repository:** [github.com/PHONGUIT22/Phonix](https://github.com/PHONGUIT22/Phonix) • **Architecture:** Gravitational MMU (L0–L3), Z3 SMT Formal Verifier, 1.5B SLM Router
 
 ---

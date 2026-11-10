@@ -5,7 +5,7 @@ excerpt: "Inside the data pipeline, static edge caching, and building-physics mo
 tags: ["Next.js 16", "Open Data", "Web Architecture", "Data Engineering"]
 readingTime: "7 min read"
 category: "Web Architecture & Engineering"
-author: "Nguyen Phong (Hac Phong)"
+author: "Nguyễn Hạc Phong"
 role: "Lead Software Architect"
 productionUrl: "https://checkdamp.co.uk"
 featured: true
@@ -13,7 +13,7 @@ featured: true
 
 # Case Study: Architecting a High-Performance UK Property Risk Engine with Next.js 16 & Open Data
 
-**Author:** Nguyen Phong (Hac Phong) • **Role:** Lead Software Architect  
+**Author:** Nguyễn Hạc Phong • **Role:** Lead Software Architect  
 **Production Platform:** [CheckDamp UK (checkdamp.co.uk)](https://checkdamp.co.uk/) • **Focus:** Regional Housing Stock & Hygrothermal Data Modeling
 
 ---

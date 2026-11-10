@@ -17,7 +17,7 @@ interface HeroBioProps {
 
 export default function HeroBio({
   headline = "Architecting autonomous AI infrastructure & high-performance web systems.",
-  subtitle = "Nguyễn Hạc Phong (Hac Phong) • Systems Engineer specializing in Context MMU Gateways, Model Context Protocol (MCP), Chaumian eCash & Programmatic SEO.",
+  subtitle = "Nguyễn Hạc Phong (Hạc Phong) • Systems Engineer specializing in Context MMU Gateways, Model Context Protocol (MCP), Chaumian eCash & Programmatic SEO.",
   status = "Available for engineering & research collaborations",
   location = "Ho Chi Minh City, Vietnam",
 }: HeroBioProps) {

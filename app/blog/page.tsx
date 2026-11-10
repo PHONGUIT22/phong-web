@@ -33,7 +33,7 @@ export default function BlogPage() {
     "publisher": {
       "@type": "Person",
       "name": "Nguyễn Hạc Phong",
-      "alternateName": "Hac Phong",
+      "alternateName": "Hạc Phong",
       "url": "https://hacphong.com",
     },
     "blogPost": posts.map((post) => ({
@@ -45,7 +45,7 @@ export default function BlogPage() {
       "author": {
         "@type": "Person",
         "name": "Nguyễn Hạc Phong",
-        "alternateName": "Hac Phong",
+        "alternateName": "Hạc Phong",
       },
     })),
   };

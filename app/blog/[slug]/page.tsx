@@ -85,13 +85,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         "author": {
           "@type": "Person",
           "name": "Nguyễn Hạc Phong",
-          "alternateName": "Hac Phong",
+          "alternateName": "Hạc Phong",
           "url": "https://hacphong.com",
         },
         "publisher": {
           "@type": "Person",
           "name": "Nguyễn Hạc Phong",
-          "alternateName": "Hac Phong",
+          "alternateName": "Hạc Phong",
           "url": "https://hacphong.com",
         },
         "keywords": post.tags.join(", "),
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </p>
 
           <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-100">
-            <span>Author: Nguyen Phong (Hac Phong)</span>
+            <span>Author: Nguyễn Hạc Phong</span>
             <span className="font-mono">Format: Technical Case Study</span>
           </div>
         </header>

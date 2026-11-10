@@ -4,7 +4,7 @@ excerpt: "How I engineered a high-performance spatial analytics platform across 
 date: "2026-11-09"
 readingTime: "12 min read"
 tags: ["Next.js 16", "Data Engineering", "Programmatic SEO", "Spatial Analytics", "E-E-A-T", "System Architecture"]
-author: "Nguyen Phong (Hac Phong)"
+author: "Nguyễn Hạc Phong"
 format: "Technical Case Study"
 featured: true
 ---
@@ -151,4 +151,4 @@ Daily Impressions (Aug 12 - Nov 04, 2026)
 
 ---
 
-*Nguyen Phong (Hac Phong) is a Software & Data Engineer specializing in geospatial data engineering, autonomous AI agent protocols, and programmatic web architecture. Discover the live platform at [WaterHardness.uk](https://waterhardness.uk).*
+*Nguyễn Hạc Phong is a Software & Data Engineer specializing in geospatial data engineering, autonomous AI agent protocols, and programmatic web architecture. Discover the live platform at [WaterHardness.uk](https://waterhardness.uk).*

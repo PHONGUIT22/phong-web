@@ -33,9 +33,8 @@ export const metadata: Metadata = {
     "Engineering portfolio of Nguyễn Hạc Phong: autonomous AI infrastructure, Context MMU gateways (Phonix), Model Context Protocol (NostrPulse MCP), Chaumian eCash, and programmatic web engines (CheckDamp UK).",
   keywords: [
     "Nguyễn Hạc Phong",
-    "Nguyen Hac Phong",
+    "Nguyen Hạc Phong",
     "Hạc Phong",
-    "Hac Phong",
     "Nguyen Phong",
     "Phonix v2.1",
     "G-MMU",

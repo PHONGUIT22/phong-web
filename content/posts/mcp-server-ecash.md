@@ -9,7 +9,7 @@ featured: true
 
 # NostrPulse MCP: Decentralized Stripe & Anti-Sybil Radar for Autonomous AI Agents
 
-> **Author:** Nguyen Phong (Hac Phong) • **Published:** November 5, 2026 • **Category:** Distributed Protocols & AI Agents  
+> **Author:** Nguyễn Hạc Phong • **Published:** November 5, 2026 • **Category:** Distributed Protocols & AI Agents  
 > **Repository:** [github.com/PHONGUIT22/nostrpulse-full](https://github.com/PHONGUIT22/nostrpulse-full) • **Live Registry:** [nostrpulse.vercel.app](https://nostrpulse.vercel.app/)
 
 ---

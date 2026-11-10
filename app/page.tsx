@@ -36,9 +36,8 @@ export default function HomePage() {
           "@id": "https://hacphong.com/#author",
           "name": "Nguyễn Hạc Phong",
           "alternateName": [
-            "Nguyen Hac Phong",
+            "Nguyen Hạc Phong",
             "Hạc Phong",
-            "Hac Phong",
             "Nguyen Phong"
           ],
           "jobTitle": "Full-Stack Systems & AI Infrastructure Engineer",
