@@ -28,13 +28,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
-  title: "Nguyễn Hạc Phong • Full-Stack Systems & AI Infrastructure Engineer",
+  title: "Hạc Phong (Nguyễn Hạc Phong) • Systems Engineer & AI Infrastructure",
   description:
-    "Engineering portfolio of Nguyễn Hạc Phong: autonomous AI infrastructure, Context MMU gateways (Phonix), Model Context Protocol (NostrPulse MCP), Chaumian eCash, and programmatic web engines (CheckDamp UK).",
+    "Hạc Phong (Nguyễn Hạc Phong) - Systems & AI Infrastructure Engineer chuyên sâu về Context MMU Gateways (Phonix), Model Context Protocol (NostrPulse MCP), Chaumian eCash và Programmatic Web Systems.",
   keywords: [
+    "Hạc Phong",
     "Nguyễn Hạc Phong",
     "Nguyen Hạc Phong",
-    "Hạc Phong",
+    "Phong Hạc",
+    "PHONGUIT22",
     "Nguyen Phong",
     "Phonix v2.1",
     "G-MMU",
@@ -48,22 +50,22 @@ export const metadata: Metadata = {
     "Programmatic SEO",
     "Systems Engineer",
   ],
-  authors: [{ name: "Nguyễn Hạc Phong", url: "https://hacphong.com" }],
-  creator: "Nguyễn Hạc Phong",
+  authors: [{ name: "Hạc Phong (Nguyễn Hạc Phong)", url: "https://hacphong.com" }],
+  creator: "Hạc Phong (Nguyễn Hạc Phong)",
   openGraph: {
-    title: "Nguyễn Hạc Phong • Full-Stack Systems & AI Infrastructure Engineer",
+    title: "Hạc Phong (Nguyễn Hạc Phong) • Systems Engineer & AI Infrastructure",
     description:
-      "Architecting autonomous AI infrastructure, AST context paging gateways, Model Context Protocol servers, and programmatic web software.",
+      "Trang cá nhân của Hạc Phong (Nguyễn Hạc Phong): Nghiên cứu kiến trúc hạ tầng AI tự chủ, AST context paging gateways, Model Context Protocol servers và hệ thống web hiệu năng cao.",
     url: "https://hacphong.com",
-    siteName: "Nguyễn Hạc Phong Portfolio",
+    siteName: "Hạc Phong Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nguyễn Hạc Phong • Systems & AI Infrastructure Engineer",
+    title: "Hạc Phong (Nguyễn Hạc Phong) • Systems & AI Infrastructure Engineer",
     description:
-      "Architecting autonomous AI infrastructure, AST context paging gateways, Model Context Protocol servers, and programmatic web software.",
+      "Trang cá nhân của Hạc Phong (Nguyễn Hạc Phong): Nghiên cứu kiến trúc hạ tầng AI tự chủ, AST context paging gateways, Model Context Protocol servers và hệ thống web hiệu năng cao.",
     creator: "@PHONGUIT22",
   },
   icons: {

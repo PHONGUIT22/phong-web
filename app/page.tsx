@@ -19,7 +19,7 @@ export default function HomePage() {
         "@type": "WebSite",
         "@id": "https://hacphong.com/#website",
         "url": "https://hacphong.com",
-        "name": "Nguyễn Hạc Phong Engineering Portfolio",
+        "name": "Hạc Phong (Nguyễn Hạc Phong) Engineering Portfolio",
         "description": "Architecting autonomous AI infrastructure & high-performance web systems.",
         "inLanguage": "en-US",
       },
@@ -27,7 +27,7 @@ export default function HomePage() {
         "@type": "ProfilePage",
         "@id": "https://hacphong.com/#webpage",
         "url": "https://hacphong.com",
-        "name": "Nguyễn Hạc Phong • Full-Stack Systems & AI Infrastructure Engineer",
+        "name": "Hạc Phong (Nguyễn Hạc Phong) • Systems Engineer & AI Infrastructure",
         "isPartOf": {
           "@id": "https://hacphong.com/#website",
         },
@@ -36,8 +36,10 @@ export default function HomePage() {
           "@id": "https://hacphong.com/#author",
           "name": "Nguyễn Hạc Phong",
           "alternateName": [
-            "Nguyen Hạc Phong",
             "Hạc Phong",
+            "Nguyen Hạc Phong",
+            "Phong Hạc",
+            "PHONGUIT22",
             "Nguyen Phong"
           ],
           "jobTitle": "Full-Stack Systems & AI Infrastructure Engineer",
