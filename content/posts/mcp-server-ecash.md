@@ -1,138 +1,197 @@
 ---
-title: "NostrPulse MCP: Decentralized Stripe & Anti-Sybil Radar for Autonomous AI Agents"
-date: "2026-11-05"
-excerpt: "Designing an open-source Model Context Protocol (MCP) server combining a 5-Pillar Web-of-Trust Anti-Sybil Radar, asynchronous Cashu eCash (NIP-61 NutZaps), NIP-47 NWC Lightning settlement, and deterministic agent spending guardrails."
-tags: ["MCP", "AI Agents", "Cashu eCash", "Nostr", "Web3"]
-readingTime: "10 min read"
+title: "How to Give AI Agents Autonomous Bitcoin, Cashu eCash & HTTP 402 Payments via MCP (NostrPulse v1.4.0)"
+date: "2026-11-20"
+excerpt: "Complete engineering guide to NostrPulse (nostrpulse-mcp v1.4.0): giving Claude Desktop, Cursor, and autonomous AI agents instant Cashu eCash (NIP-61), HTTP 402 (L402 + NUT-24) paywall settlement, NIP-47 NWC Lightning rails, 5-Pillar Web-of-Trust Anti-Sybil Radar, and SQLite spending guardrails."
+tags: ["MCP", "AI Agents", "Cashu eCash", "HTTP 402", "Nostr", "Bitcoin Lightning"]
+readingTime: "12 min read"
 featured: true
 ---
 
-# NostrPulse MCP: Decentralized Stripe & Anti-Sybil Radar for Autonomous AI Agents
+# How to Give AI Agents Autonomous Bitcoin, Cashu eCash & HTTP 402 Payments via MCP (NostrPulse v1.4.0)
 
-> **Author:** Nguyễn Hạc Phong • **Published:** November 5, 2026 • **Category:** Distributed Protocols & AI Agents  
-> **Repository:** [github.com/PHONGUIT22/nostrpulse-full](https://github.com/PHONGUIT22/nostrpulse-full) • **Live Registry:** [nostrpulse.vercel.app](https://nostrpulse.vercel.app/)
-
----
-
-## 1. The Autonomous Agent Dilemma: Sybil Floods and KYC Lockouts
-
-As software engineering shifts toward autonomous multi-agent swarms, LLMs require native capabilities to discover collaborator services, negotiate computational contracts, and settle micro-transactions without human intervention. However, deploying agentic payments into production surfaces two fundamental vulnerabilities:
-
-1. **The Sybil Attack Vector:** On open distributed networks, generating an asymmetric secp256k1 keypair (`npub`) costs $0.00. Malicious actors can spin up tens of thousands of ephemeral agent identities to spam tool registries, poach computational bounties, and poison shared knowledge graphs.
-2. **The Sovereign Settlement Chokepoint:** Conventional fiat payment processors (Stripe, PayPal, Brex) require human KYC identity proofs, legal entity registration, and manual fraud reviews. Autonomous agents executing micro-tasks (e.g., paying 5 sats for an API call) are systematically blocked or banned by legacy banking rails. Furthermore, synchronous Lightning invoices (BOLT-11) require the receiving agent to be online to generate and settle the payment hash, failing when agents execute intermittent, asynchronous workloads.
-
-**NostrPulse MCP (v1.3.2)** provides a production-grade, open-source sovereign trust and payment infrastructure for autonomous AI agents via Anthropic's **Model Context Protocol (MCP)**.
+> **Author:** Nguyễn Hạc Phong • **Published:** November 20, 2026 • **Category:** Distributed Protocols & AI Agents  
+> **npm Package:** [npmjs.com/package/nostrpulse-mcp](https://www.npmjs.com/package/nostrpulse-mcp) • **Repository:** [github.com/PHONGUIT22/nostrpulse-full](https://github.com/PHONGUIT22/nostrpulse-full)
 
 ---
 
-## 2. Server Architecture & Topology
+## 1. Why AI Agents Cannot Use Stripe (And How Freedom Tech Solves It)
 
-NostrPulse runs locally over standard input/output (Stdio JSON-RPC), connecting seamlessly to agent environments including Claude Desktop, Cursor IDE, Windsurf, and custom agent harnesses:
+As software engineering shifts toward autonomous multi-agent swarms, LLMs running inside **Claude Desktop**, **Cursor**, **Windsurf**, and custom TypeScript runtimes need native capabilities to pay for APIs, hire compute workers, and settle micro-transactions without human intervention.
 
-```
-[Consumer Client] (Claude Desktop / Cursor IDE / Windsurf)
-       │
-       ▼ Stdio JSON-RPC (MCP Protocol)
-[NOSTRPULSE-MCP GATEWAY CORE] (Non-Custodial)
-   ├── 5-Pillar WoT Anti-Sybil Radar (0-100 Score, 22 Root Anchors)
-   ├── Agent Spending Guardrails (50 sat/tx cap, 500 sat 24h budget)
-   └── Dual-Rail Value Settlement Engine
-         ├── NIP-61 Cashu NutZaps (Async Chaumian eCash)
-         └── NIP-47 Nostr Wallet Connect (Synchronous Lightning)
-       │
-       ▼ Decentralized Protocol Mesh
-   ├── Chaumian eCash Layer: Cashu Dynamic Mint Mesh (RFC 8949 CBOR)
-   └── Relay Layer: Nostr Distributed Relay Network (NIP-01 / NIP-65)
-```
+Conventional payment rails fail autonomous agents in two fundamental ways:
+1. **KYC Lockouts & Fiat Friction:** Stripe, PayPal, and corporate credit cards require human KYC identity verification, legal entity registration, and 30-cent fixed fee floors—making a **5-satoshi API call** or **21-satoshi agent bounty** economically impossible.
+2. **Sybil Attacks & Wallet Draining:** On open decentralized networks, generating cryptographic keypairs (`npub`) costs `$0.00`. Without an anti-Sybil reputation filter and strict budget guardrails, a single prompt injection or infinite ReAct loop can drain an agent's wallet in seconds.
 
----
+**NostrPulse (`nostrpulse-mcp` v1.4.0)** solves both problems. It is an open-source **Model Context Protocol (MCP)** server and TypeScript SDK built on the **Freedom Tech Stack** (Nostr + Bitcoin Lightning + Cashu Chaumian eCash), providing **Stripe-like M2M settlement** and **Stripe Radar-grade anti-Sybil protection** out of the box.
 
-## 3. Core Tool Specification (10 Production MCP Tools)
-
-The server exposes 10 high-level tools designed for autonomous agent execution:
-
-| Tool Name | Domain | Primary Capability |
+| Vector | Legacy Web2 / Stripe | NostrPulse (`nostrpulse-mcp` v1.4.0) |
 | :--- | :--- | :--- |
-| `check_trust_score` | Trust / Radar | Computes 5-Pillar Web-of-Trust score (0–100 pts) with Sybil damping. |
-| `pay_cashu_nutzap` | Payment | Emits asynchronous blind-signature NutZaps (NIP-61) via NIP-59 Gift Wrap. |
-| `request_nip90_job` | Compute | Publishes NIP-90 Data Vending Machine computation requests. |
-| `pay_lightning_nwc` | Payment | Settles synchronous BOLT-11 invoices via Nostr Wallet Connect (NIP-47). |
-| `pay_with_nwc` | Payment | High-level unified payment orchestration with auto-fallback. |
-| `audit_cashu_mint` | Radar | Audits mint solvency, keysets, and protocol compliance. |
-| `route_cashu_mint` | Radar | Selects lowest-latency, highest-reputation mint endpoints. |
-| `get_agent_identity` | Identity | Inspects local secp256k1 keypair, NIP-05 address, and npub string. |
-| `get_spending_guardrails` | Governance | Audits per-tx caps, rolling 24-hour limits, and counterparty gates. |
-| `get_agent_telemetry` | Telemetry | Emits diagnostic settlement latency and cache hit ratios. |
-
-### Context-Optimized SLM Profiles
-To prevent tool schema definitions from crowding smaller localized models, NostrPulse introduces context-pruning CLI flags:
-
-```bash
-# Drops tool definition context from 2,200 tokens to 380 tokens for 1.5B models
-npx nostrpulse-mcp --profile=payment
-```
-
-Available profiles include `--profile=minimal`, `--profile=radar`, `--profile=payment`, and `--profile=full`.
+| **Agent Identity** | API keys, credit cards, KYC bans | **Zero-Config Sovereign Keypairs (`NIP-01 / NIP-19`)** |
+| **Anti-Fraud (Radar)** | Centralized black-box heuristics | **Web-of-Trust Ring-1 (22 Root Anchors) + Sats Stake** |
+| **M2M Settlement** | 30% cuts, merchant holds | **Chaumian eCash (NIP-61 NutZaps): Zero-fee, instant, private** |
+| **API Paywalls** | OAuth + Monthly SaaS billing | **HTTP 402 Engine (`L402` Lightning + Cashu `NUT-24 X-Cashu`)** |
+| **Offline Delivery** | Synchronous connection required | **Asynchronous NutZaps via NIP-59 Gift Wrap & Relays** |
+| **Compute Delegation** | Proprietary cloud APIs | **NIP-90 Data Vending Machines (Open Compute Marketplace)** |
+| **AI Protocol** | Custom vendor REST wrappers | **Stdio JSON-RPC via Model Context Protocol (`nostrpulse-mcp`)** |
 
 ---
 
-## 4. The 5-Pillar Web-of-Trust Anti-Sybil Radar
+## 2. Zero-Code Quickstart: Connect Cursor & Claude Desktop in 10 Seconds
 
-To evaluate counterparty credibility without centralized KYC, NostrPulse implements an algorithmic graph traversal that assigns a cryptographic trust score from **0 to 100 points**:
+NostrPulse exports an industry-standard MCP server over **Stdio JSON-RPC**. You do not need to clone a repository or manually generate `nsec` private keys—the server automatically bootstraps a persistent local keypair at `.nostrpulse/agent-identity.json` (mode `0600`).
 
-- **Pillar 1: NIP-05 DNS Binding (+25 pts):** Validates DNS cryptographic domain ownership proof (e.g., `agent@domain.com`). Prevents identity spoofing by requiring ownership of a registered web domain.
-- **Pillar 2: WoT Distance to Root Anchors (+25 pts):** Calculates degrees of separation from 22 sovereign root Nostr developers and infrastructure operators. Shorter graph distances yield maximum points.
-- **Pillar 3: Sat-Weighted Economic Stake (+20 pts):** Measures historical on-chain and Lightning sat volume transacted and verified by the identity, providing economic proof of skin-in-the-game.
-- **Pillar 4: Key Longevity & Activity Half-Life (+15 pts):** Evaluates the cryptographic age of the secp256k1 keypair and consistency of signed events over time. Ephemeral bot keys created minutes ago receive 0 points.
-- **Pillar 5: Social Metadata & PoW Difficulty (+15 pts):** Verifies profile metadata completeness (avatar, bio, relays) and checks for SHA-256 Proof-of-Work leading zeroes on published events.
+Add this configuration to your `claude_desktop_config.json` or `.cursor/mcp.json`:
 
-### Unverified Sybil Capping
-Identities lacking cryptographic DNS proofs or verified social graph links are hard-capped at **44 points maximum**. By configuring agent guardrails to require `min_trust_score: 50`, autonomous agents automatically ignore Sybil swarms and spam bots.
-
----
-
-## 5. Deterministic Agent Spending Guardrails
-
-To prevent runaway agentic loops or model hallucinations from draining funds, NostrPulse enforces deterministic financial boundaries backed by local SQLite persistence:
-
-- **Per-Transaction Cap:** Restricts any single payment tool invocation to a maximum of **50 sats** (configurable).
-- **Rolling 24-Hour Budget:** Enforces a hard aggregate daily ceiling of **500 sats** across all combined tool calls.
-- **Stateful Circuit Breaker:** If an agent attempts more than 3 failed transactions in 60 seconds, the payment rail pauses automatically, alerting the developer via console events.
-
----
-
-## 6. Zero-Code Quickstart & Configuration
-
-Integrating NostrPulse into modern agent harnesses requires adding a simple entry to your client configuration:
-
-### Claude Desktop Configuration (`claude_desktop_config.json`)
 ```json
 {
   "mcpServers": {
     "nostrpulse": {
       "command": "npx",
-      "args": ["-y", "nostrpulse-mcp@latest", "--profile=full"],
-      "env": {
-        "NOSTR_PRIVATE_KEY": "nsec1...",
-        "NWC_CONNECTION_URI": "nostr+walletconnect://..."
-      }
+      "args": ["-y", "nostrpulse-mcp"]
     }
   }
 }
 ```
 
-### Direct CLI Execution
+- **Claude Desktop (macOS):** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Claude Desktop (Windows):** `%APPDATA%\Claude\claude_desktop_config.json`
+- **Cursor IDE:** `.cursor/mcp.json` in your project root, or under *Cursor Settings > Features > MCP*.
+
+To inspect all 11 tools and test prompts interactively in your browser, run the official MCP Inspector:
+
 ```bash
-# Run standalone server over stdio
-npx nostrpulse-mcp
+npx @modelcontextprotocol/inspector npx -y nostrpulse-mcp
 ```
 
 ---
 
-## 7. Open Source & Project Ecosystem
+## 3. 3-Line TypeScript SDK & HTTP 402 Paywall Engine (`nostrpulse-mcp/sdk`)
 
-NostrPulse MCP is completely open-source and part of the sovereign agentic tooling initiative:
+For developers building custom Node.js or TypeScript AI agents who want autonomous eCash/Lightning rails and HTTP `402 Payment Required` handling without manually wiring Nostr NIPs or Cashu NUTs:
 
-- **Source Code Repository:** [github.com/PHONGUIT22/nostrpulse-full](https://github.com/PHONGUIT22/nostrpulse-full)
-- **Live Tool Registry & Explorer:** [nostrpulse.vercel.app](https://nostrpulse.vercel.app/)
-- **Protocol Specifications:** Anthropic MCP, Nostr NIP-05 / NIP-47 / NIP-59 / NIP-61, Cashu NUT-00–12
+```typescript
+import { NostrPulseAgent } from "nostrpulse-mcp/sdk";
+
+const wallet = new NostrPulseAgent({ maxDailySats: 5000, minTrustScore: 65 });
+await wallet.deposit("cashuAeyJ0b2tlbiI6...");
+const receipt = await wallet.pay({
+  to: "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6",
+  amountSats: 21,
+  memo: "AI task settlement",
+});
+
+// Bitcoin-native HTTP 402 Paywall Engine (L402 Lightning + Cashu NUT-24 X-Cashu)
+const paidApi = await wallet.fetch402("https://api.example.com/paid-endpoint");
+```
+
+The built-in `fetch402` engine automatically detects `402 Payment Required` responses, settles either **Lightning L402** invoices or **Cashu NUT-24 (`X-Cashu`)** headers under strict SSRF and spending guardrails, and retries the request transparently.
+
+---
+
+## 4. Complete Lookup Table: 11 Core MCP Tools
+
+| Tool Name | Category | Description |
+| :--- | :---: | :--- |
+| `check_trust_score` | **Radar / Anti-Sybil** | Evaluates Web-of-Trust Ring-1 (22 Root Anchors), transitive hops, and Sybil-filtered Economic Stake (sats) before interacting or paying. |
+| `pay_cashu_nutzap` | **Payment Rails (eCash)** | Instant M2M settlement with Chaumian eCash (`NIP-61` NutZap) wrapped in metadata-private `NIP-59` Gift Wrap and `NIP-44` encryption. |
+| `request_nip90_job` | **Decentralized Compute** | Dispatches compute tasks to decentralized `NIP-90` Data Vending Machines (DVMs) across Nostr relays with local SQLite cache fallback. |
+| `pay_lightning_nwc` | **Payment Rails (Lightning)** | Settle BOLT-11 Lightning invoices directly via `NIP-47` Nostr Wallet Connect (Alby Hub, Phoenixd, Umbrel) with zero-leak pool cleanup. |
+| `pay_with_nwc` | **Payment Rails (Alias)** | Direct NWC payment executor alias for `pay_lightning_nwc`. |
+| `audit_cashu_mint` | **Mint Radar** | Audits counterparty risk of a Cashu eCash Mint via `NUT-06 /v1/info`, `NIP-05` sovereign domain validation, and admin WoT reputation. |
+| `route_cashu_mint` | **Mint Mesh** | Dynamically discovers and routes to the highest-trust, lowest-latency Cashu Mint from the WoT-Gated Dynamic Mint Mesh. |
+| `get_agent_identity` | **Zero-Config Identity** | Retrieves active agent cryptographic identity (`pubkey`, `npub`, keystore source). Automatically bootstraps local keys if missing. |
+| `get_spending_guardrails` | **Budget Gatekeeper** | Queries active daily budget (500 sats rolling), 24h satoshis spent, remaining allowance, and per-transaction cap (50 sats). |
+| `get_agent_telemetry` | **Telemetry & Audit** | Inspects structured audit logs (`payment`, `radar_block`, `job_settlement`, `mint_audit`) and blocked Sybil threats. |
+| `fetch_with_402_payment` | **HTTP 402 Paywall** | Fetches external REST APIs and settles HTTP `402` paywalls via Cashu `NUT-24` (`X-Cashu`) or Lightning `L402` with SSRF protection. |
+
+---
+
+## 5. Optimizing Context for Small Language Models (500M – 1.5B SLMs)
+
+Loading 11 full JSON tool schemas consumes **~2,200 tokens**—excessive overhead for local SLMs like `qwen2.5-coder:1.5b` running on Ollama or edge devices. NostrPulse v1.4.0 supports **context-pruned profiles** that cut tool overhead by **82% (down to ~380 tokens)**:
+
+```bash
+# Launch with minimal profile (3 core tools: check_trust_score, pay_cashu_nutzap, get_spending_guardrails)
+npx -y nostrpulse-mcp --profile=minimal
+
+# Or via environment variable
+NOSTRPULSE_PROFILE=minimal npx -y nostrpulse-mcp
+```
+
+| Profile | Active Tools | Token Footprint | Recommended Use Case |
+| :--- | :--- | :---: | :--- |
+| `minimal` | `check_trust_score`, `pay_cashu_nutzap`, `get_spending_guardrails` | **~380 tokens** | Local SLMs (0.5B–1.5B), edge devices, low-cost loops |
+| `radar` | `check_trust_score`, `audit_cashu_mint` | **~240 tokens** | Read-only anti-Sybil screening & Mint risk verification |
+| `payment` | `pay_cashu_nutzap`, `pay_lightning_nwc`, `get_spending_guardrails` | **~420 tokens** | Payment-only execution daemons & bots |
+| `full` | All 11 NostrPulse MCP tools | **~2,200 tokens** | Flagship LLMs (Claude, GPT, Gemini) |
+
+---
+
+## 6. 5-Pillar Anti-Sybil Radar & NUT-06 Mint Risk Auditing
+
+### A. 5-Pillar Cryptographic Trust Score (0–100 Points)
+
+To neutralize bot swarms without centralized KYC, `check_trust_score` evaluates five deterministic signals across open Nostr relays and local SQLite cache:
+
+1. **Pillar 1 — NIP-05 Cryptographic DNS Binding (25 pts):** Validates `.well-known/nostr.json` against the public key, awarding bonuses for sovereign custom domains.
+2. **Pillar 2 — Web-of-Trust Ring-1 Proximity (25 pts):** Computes graph hops to **22 verified protocol Root Anchors** (`jack`, `fiatjaf`, `jb55`, `calle`, `odell`, etc.).
+3. **Pillar 3 — Sats-Weighted Economic Stake (20 pts):** Analyzes verified Zap receipts while filtering out self-zaps and circular bot clones.
+4. **Pillar 4 — Keypair Longevity & Multi-Relay Depth (15 pts):** Evaluates keypair age and replication across global relays.
+5. **Pillar 5 — Metadata Richness & Authenticity (15 pts):** Verifies profile metadata and external identity endpoints.
+
+> **Anti-Sybil Damping Guard:** Any account lacking **both** a verified NIP-05 signature **and** Web-of-Trust graph proximity is **strictly capped at 44 points (Unverified / Potential Bot)**, preventing Sybil swarms from crossing the default payment threshold.
+
+### B. WoT-Gated Dynamic Mint Mesh (`NUT-06` Radar)
+
+Because Cashu Mints carry counterparty risk, `audit_cashu_mint` probes `/v1/info`, measures response latency, checks supported NUTs (`NUT-04`, `NUT-05`, `NUT-07`, `NUT-08`, `NUT-10`, `NUT-11`), and resolves the Mint admin's Nostr WoT score into three risk tiers:
+- **`LOW` (Score ≥ 75):** `TRUSTED` — verified operator, low latency, full NUT compliance.
+- **`MODERATE` (Score 45–74):** `USE_WITH_CAP` — community mint with acceptable WoT connectivity.
+- **`HIGH_RISK` (Score < 45):** `AVOID` — anonymous admin, insecure HTTP, or isolated keypair.
+
+---
+
+## 7. Autonomous Agent-to-Agent (A2A) Mesh & Spending Guardrails
+
+NostrPulse enforces strict pre-flight **Spending Guardrails** backed by SQLite (`agent_spending_log`) before any cryptographic token leaves the agent:
+
+```text
+[ Agent Payment Request ]
+       │
+       ├──► Check AGENT_MAX_SATS_PER_TX (Default: 50 sats)
+       ├──► Check AGENT_DAILY_LIMIT_SATS (Default: 500 sats / 24h rolling)
+       └──► Check AGENT_MIN_RECIPIENT_SCORE (Default: >= 40 WoT Score)
+                │
+                ▼ (Any Violation)
+      Short-Circuit Block ──► { status: "blocked_by_guardrails", reason } (0 Sats Spent)
+```
+
+In the reference **Autonomous Agent-to-Agent (A2A) Collaborative Mesh** (`scripts/test-mesh-agent.ts`), two local agents negotiate and settle a `NIP-90` compute job (`zap-analytics`) using **Ollama (`qwen2.5-coder:1.5b`)** with zero cloud API keys:
+1. **Buyer Agent** dispatches a `NIP-90` job request.
+2. **Worker Agent** audits the Buyer's WoT score (`check_trust_score`) before executing work.
+3. **Buyer Agent** checks its rolling 24h budget (`get_spending_guardrails`) and settles via Chaumian eCash (`pay_cashu_nutzap`) with **Adaptive Spending Fallback** so micro-payments adapt to remaining safe allowance without crashing.
+
+```bash
+# Run the local zero-cloud A2A showcase against the published npm package
+npm exec tsx scripts/test-mesh-agent.ts --ollama --npm
+```
+
+---
+
+## 8. Frequently Asked Questions (FAQ)
+
+### How do I install `nostrpulse-mcp` in Claude Desktop or Cursor?
+Add `"nostrpulse": { "command": "npx", "args": ["-y", "nostrpulse-mcp"] }` to `claude_desktop_config.json` or `.cursor/mcp.json`. No manual private key setup is required; NostrPulse automatically bootstraps a non-custodial keypair locally.
+
+### Does NostrPulse store or have access to my private keys (`nsec`)?
+No. NostrPulse is 100% non-custodial open-source software. Keys are either read from your local environment (`NOSTR_SECRET_KEY` / `AGENT_NSEC`) or generated locally with `0600` file permissions in `.nostrpulse/agent-identity.json` (git-ignored).
+
+### How does HTTP 402 (`fetch402`) work for AI agents?
+When an agent calls `wallet.fetch402(url)` or the `fetch_with_402_payment` MCP tool and receives an HTTP `402 Payment Required` challenge, NostrPulse parses either the `L402` Lightning invoice or Cashu `NUT-24` (`X-Cashu`) header, verifies the amount against your spending guardrails, pays it, and returns the unlocked API response.
+
+---
+
+## Resources & Package Links
+
+- **npm Package (`nostrpulse-mcp` v1.4.0):** [npmjs.com/package/nostrpulse-mcp](https://www.npmjs.com/package/nostrpulse-mcp)
+- **GitHub Repository:** [github.com/PHONGUIT22/nostrpulse-full](https://github.com/PHONGUIT22/nostrpulse-full)
+- **Built by:** [Hạc Phong](https://hacphong.com) (`@PHONGUIT22`)

@@ -51,7 +51,7 @@ export default function HomePage() {
             "https://www.linkedin.com/in/nguy%E1%BB%85n-phong-a673681b5/",
             "https://www.facebook.com/phong.nguyen.916206/",
             "https://layers.to/np798573l7ecnk8fcs",
-            "https://nostrpulse.vercel.app/",
+            "https://www.npmjs.com/package/nostrpulse-mcp",
             "https://checkdamp.co.uk/",
             "https://www.uit.edu.vn",
           ],

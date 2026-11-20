@@ -19,11 +19,11 @@
   },
   {
     "slug": "mcp-server-ecash",
-    "title": "NostrPulse MCP: Decentralized Stripe & Anti-Sybil Radar for Autonomous AI Agents",
-    "excerpt": "Designing an open-source Model Context Protocol (MCP) server combining a 5-Pillar Web-of-Trust Anti-Sybil Radar, asynchronous Cashu eCash (NIP-61 NutZaps), NIP-47 NWC Lightning settlement, and deterministic agent spending guardrails.",
-    "date": "2026-11-05",
-    "tags": ["MCP", "AI Agents", "Cashu eCash", "Nostr", "Web3"],
-    "readingTime": "10 min read",
+    "title": "How to Give AI Agents Autonomous Bitcoin, Cashu eCash & HTTP 402 Payments via MCP (NostrPulse v1.4.0)",
+    "excerpt": "Complete engineering guide to NostrPulse (nostrpulse-mcp v1.4.0): giving Claude Desktop, Cursor, and autonomous AI agents instant Cashu eCash (NIP-61), HTTP 402 (L402 + NUT-24) paywall settlement, NIP-47 NWC Lightning rails, 5-Pillar Web-of-Trust Anti-Sybil Radar, and SQLite spending guardrails.",
+    "date": "2026-11-20",
+    "tags": ["MCP", "AI Agents", "Cashu eCash", "HTTP 402", "Nostr", "Bitcoin Lightning"],
+    "readingTime": "12 min read",
     "featured": true
   },
   {

@@ -14,14 +14,14 @@
   {
     "id": "nostrpulse-mcp",
     "name": "NostrPulse MCP",
-    "tagline": "Decentralized Stripe & Anti-Sybil Radar for AI Agents",
-    "description": "Open-source payment and sovereign trust layer for autonomous AI agents over Model Context Protocol (Stdio JSON-RPC). Combines a 5-Pillar Web-of-Trust Anti-Sybil Radar, asynchronous Cashu eCash (NIP-61 NutZaps), NIP-47 NWC Lightning rails, and autonomous spending guardrails.",
+    "tagline": "Autonomous Micropayments (Cashu eCash, HTTP 402 & NIP-61) and Guardrails for AI Agents",
+    "description": "Open-source payment, HTTP 402 (L402 + Cashu NUT-24), and sovereign trust layer for autonomous AI agents via Model Context Protocol (Stdio JSON-RPC) & TypeScript SDK. Combines a 5-Pillar Web-of-Trust Anti-Sybil Radar, asynchronous Cashu eCash (NIP-61 NutZaps), NIP-47 NWC Lightning rails, and autonomous spending guardrails.",
     "category": "AI / Web3",
-    "tech": ["TypeScript", "MCP Stdio", "Cashu eCash", "Nostr NIP-61/47", "Next.js 16"],
+    "tech": ["TypeScript", "MCP Stdio", "Cashu eCash", "HTTP 402 / L402", "Nostr NIP-61/47", "Next.js 16"],
     "github": "https://github.com/PHONGUIT22/nostrpulse-full",
-    "demo": "https://nostrpulse.vercel.app/",
+    "demo": "https://www.npmjs.com/package/nostrpulse-mcp",
     "featured": true,
-    "status": "NPM V1.3.2"
+    "status": "NPM V1.4.0"
   },
   {
     "id": "checkdamp-uk",
